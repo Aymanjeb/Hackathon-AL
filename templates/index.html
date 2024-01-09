@@ -1,5 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search French Companies</title>
+</head>
+<body>
+    <h1>Search for a Company</h1>
+    <form id="search-form">
+        <input type="text" id="company-name" placeholder="Enter company name or SIREN">
+        <button type="submit">Search</button>
+    </form>
+    <div id="company-data">
+        <!-- Company data will be displayed here -->
+    </div>
 
+    <script>
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const companyName = document.getElementById('company-name').value;
+            const url = `https://entreprise.data.gouv.fr/api/sirene/v1/full_text/${companyName}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const companyData = document.getElementById('company-data');
+                    companyData.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        });
+    </script>
+</body>
 </html>
-
