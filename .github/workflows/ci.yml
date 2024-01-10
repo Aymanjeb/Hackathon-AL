@@ -50,3 +50,5 @@ jobs:
         git fetch origin Dev
         git merge --no-ff -X theirs FETCH_HEAD -m "Merged Dev into Main, favoring Dev branch changes"
         git push origin HEAD:main
+      env:
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
