@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
+import requests 
 
 app = Flask(__name__)
 
@@ -7,8 +8,19 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 
-    
+@app.route('/search', methods=['POST'])
+def search():
+    query = request.form['movieQuery']
+    movies = fetch_movies(query)
+    return render_template('results.html', movies=movies)
+
+def fetch_movies(query):
+    api_key = 'd305ff0ace7d67649c334fa06e7dd9db'
+    url = f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={query}'
+    response = requests.get(url)
+    return response.json()['results']
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port, debug=True)
