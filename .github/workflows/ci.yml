@@ -43,12 +43,13 @@ jobs:
       with:
         ref: main
 
-    - name: Merge Dev branch
+    - name: Overwrite Main with Dev
       run: |
         git config --global user.name 'Aymanjeb'
         git config --global user.email 'aymanjeb02@gmail.com'
-        git fetch origin Dev
-        git merge --no-ff -X theirs FETCH_HEAD -m "Merged Dev into Main, favoring Dev branch changes"
-        git push origin HEAD:main
+        git fetch origin main
+        git checkout main
+        git reset --hard origin/Dev
+        git push -f origin main
       env:
         GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
