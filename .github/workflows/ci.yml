@@ -47,6 +47,7 @@ jobs:
       run: |
         git config --global user.name 'Aymanjeb'
         git config --global user.email 'aymanjeb02@gmail.com'
+        git checkout Dev
         git push origin Dev
         git fetch origin main
         git checkout main
