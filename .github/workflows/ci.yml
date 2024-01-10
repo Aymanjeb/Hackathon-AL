@@ -49,7 +49,7 @@ jobs:
         git config --global user.email 'aymanjeb02@gmail.com'
         git fetch origin main
         git checkout main
-        git reset --hard origin Dev
+        git reset --hard Dev
         git push -f origin main
       env:
         GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
