@@ -25,7 +25,7 @@ Stalingo is used for deploying and hosting the application.
 
 **Python Compatibility**: Tests against Python 3.9, 3.10, 3.11.
 
-**Linting**: Uses Flake8 for code quality checks.
+**Linting**: Uses Flake8 for code quality checks and syntax errors
 
 **Automated Pull Request Creation**: Creates a pull request from Dev to main after successful checks.
 
