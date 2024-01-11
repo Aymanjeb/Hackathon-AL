@@ -48,8 +48,7 @@ jobs:
         git config --global user.name 'Aymanjeb'
         git config --global user.email 'aymanjeb02@gmail.com'
         git fetch origin
-        git checkout main
-        git reset --hard origin/Dev
-        git push -f origin main
+        git merge origin/Dev --no-ff -m "Merge branch 'Dev' into 'main'"
+        git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
