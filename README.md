@@ -22,8 +22,11 @@ Stalingo is used for deploying and hosting the application.
  is used for automating the build and deployment processes. The CI pipeline is triggered on each push to the `dev` branch. It includes the following steps:
 
 **Trigger**: Activates on push to the Dev branch.
+
 **Python Compatibility**: Tests against Python 3.9, 3.10, 3.11.
+
 **Linting**: Uses Flake8 for code quality checks.
+
 **Automated Pull Request Creation**: Creates a pull request from Dev to main after successful checks.
 
 ### Development Workflow
