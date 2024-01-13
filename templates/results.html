@@ -56,6 +56,7 @@
     <h1>Movie Results</h1>
     <div id="results">
         {% for movie in movies %}
+        <a href="https://www.themoviedb.org/movie/{{ movie.id }}" class="movie-link">
             <div class="movie">
                 <h2>{{ movie.title }}</h2>
                 <p>{{ movie.overview }}</p>

@@ -42,3 +42,6 @@ Stalingo is used for deploying and hosting the application.
 
 The url linked to our repository is the following : https://hackathon-al.osc-fr1.scalingo.io/
 This website provides a simple and intuitive interface for searching movies. It leverages the TMDB (The Movie Database) API to fetch and display movie information based on user queries.
+
+### Importing new librairies to the repo repository
+If you want to import new python packages in the app.py file, you need to add them to files : Pipfile.lock and Procfile. To do that, you need to install pipenv via pip and then run "pipenv lock" in a terminal.
