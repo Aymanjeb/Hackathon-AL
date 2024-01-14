@@ -50,25 +50,17 @@
         a:hover {
             background-color: #0056b3;
         }
-        .movie-link {
-            text-decoration: none;
-            color: inherit; /* Ensures text color doesn't change */
-        }
-        .movie-link:hover .movie {
-            transform: scale(1.03);
-        }
+        
     </style>
 </head>
 <body>
     <h1>Movie Results</h1>
     <div id="results">
         {% for movie in movies %}
-        <a href="https://www.themoviedb.org/movie/{{ movie.id }}" class="movie-link">
             <div class="movie">
-                <h2>{{ movie.title }}</h2>
+                <h2 href="https://www.themoviedb.org/movie/{{ movie.id }}" >{{ movie.title }}</h2>
                 <p>{{ movie.overview }}</p>
             </div>
-        </a>
         {% endfor %}
     </div>
     <a href="/">New Search</a>
