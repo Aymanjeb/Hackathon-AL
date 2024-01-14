@@ -17,7 +17,7 @@ The project uses github as its version control system. The main branches are:
 
 Stalingo is used for deploying and hosting the application. 
 
-### Continuous Integration/Continuous Deployment (CI/CD)
+### Continuous Integration (CI)
 
  is used for automating the build and deployment processes. The CI pipeline is triggered on each push to the `dev` branch. It includes the following steps:
 
@@ -26,6 +26,8 @@ Stalingo is used for deploying and hosting the application.
 **Python Compatibility**: Tests against Python 3.9, 3.10, 3.11.
 
 **Linting**: Uses Flake8 for code quality checks and syntax errors
+
+**HTML code validation**: Verifies the syntax of the HTML code
 
 **Automated Pull Request Creation**: Creates a pull request from Dev to main after successful checks.
 
@@ -43,5 +45,29 @@ Stalingo is used for deploying and hosting the application.
 The url linked to our repository is the following : https://hackathon-al.osc-fr1.scalingo.io/
 This website provides a simple and intuitive interface for searching movies. It leverages the TMDB (The Movie Database) API to fetch and display movie information based on user queries. In addition, you can click on a specific movie and be redirected to the TMDB website for more information on the selected movie.
 
+### Repository structure
+
+This repository is structured for a Python-based web application with Docker support and deployment configurations for Scalingo, a cloud platform. Below are the contents and their respective roles:
+
+- `/.github/workflows/` - Contains GitHub Actions CI workflow definitions, which automate testing  process.
+- `/templates/` - Stores HTML templates for the Flask web application, used to render the frontend.
+- `app.py` - The main Python script for the Flask web application. It defines routes and server logic.
+- `docker-compose.yml` - A Docker Compose file that defines the services, networks, and volumes for a multi-container Docker application.
+- `Dockerfile` - Instructions for building a Docker image for the web application.
+- `Pipfile` - Defines Python package dependencies for use with Pipenv, which is a packaging tool for Python.
+- `Pipfile.lock` - A locked version of dependencies from Pipfile to ensure consistent installations across environments.
+- `Procfile` - Used by Scalingo and other platform-as-a-service providers to declare the command that starts the application.
+- `requirements.txt` - A list of Python package dependencies for traditional pip installations.
+- `scalingo.json` - May contain configurations specific for Scalingo, such as add-ons or environment variables.
+
+Each file and directory is part of the project's setup, configuration, or the application itself, ensuring smooth deployment and development cycles.
+
+### Security measures
+
+To ensure security, we have put in place a number of measures, such as :
+- The "main" branch is protected, you can't push directly into it, and you have to make a pull request to merge the code from the "Dev" branch into the "main" branch
+- The API_KEY used to display the movies is hidden.
+
 ### Importing new librairies to the repo repository
+
 If you want to import new python packages into the app.py file, you need to add them to the Pipfile.lock and Procfile files. To do this, install pipenv via pip and run "pipenv lock" in a terminal.
