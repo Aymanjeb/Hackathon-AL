@@ -58,7 +58,7 @@
     <div id="results">
         {% for movie in movies %}
             <div class="movie" onclick="window.location.href='https://www.themoviedb.org/movie/{{ movie.id }}';">
-                <h2 >{{ movie.title }}
+                <h2 >{{ movie.title }}</h2>
                 <p>{{ movie.overview }}</p>
             </div>
         {% endfor %}
