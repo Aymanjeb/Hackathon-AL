@@ -15,7 +15,7 @@ def search():
     return render_template('results.html', movies=movies)
 
 def fetch_movies(query):
-    api_key = 'd305ff0ace7d67649c334fa06e7dd9db'
+    api_key = os.getenv('API_KEY')
     url = f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={query}'
     response = requests.get(url)
     return response.json()['results']
