@@ -68,6 +68,6 @@ To ensure security, we have put in place a number of measures, such as :
 - The "main" branch is protected, you can't push directly into it, and you have to make a pull request to merge the code from the "Dev" branch into the "main" branch
 - The API_KEY used to display the movies is hidden.
 
-### Importing new librairies to the repo repository
+### Importing new librairies to the repository
 
 If you want to import new python packages into the app.py file, you need to add them to the Pipfile.lock and Procfile files. To do this, install pipenv via pip and run "pipenv lock" in a terminal.
