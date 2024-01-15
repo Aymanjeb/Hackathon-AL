@@ -18,7 +18,10 @@ def fetch_movies(query):
     api_key = os.getenv('API_KEY')
     url = f'https://api.themoviedb.org/3/search/movie?api_key={api_key}&query={query}'
     response = requests.get(url)
-    return response.json()['results']
+    #print(query)
+    #print(response.json()['results'])
+    data = response.json()
+    return data.get('results', [])
 
 
 if __name__ == "__main__":
