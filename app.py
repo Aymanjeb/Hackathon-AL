@@ -2,6 +2,8 @@ import os
 from flask import Flask, render_template, request
 import requests 
 
+# text ext
+
 app = Flask(__name__)
 
 @app.route("/")
