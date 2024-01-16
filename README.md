@@ -59,6 +59,7 @@ This repository is structured for a Python-based web application with Docker sup
 - `Procfile` - Used by Scalingo and other platform-as-a-service providers to declare the command that starts the application.
 - `requirements.txt` - A list of Python package dependencies for traditional pip installations.
 - `scalingo.json` - May contain configurations specific for Scalingo, such as add-ons or environment variables.
+- `/tests/test_functionalities.py` - Contains the unit tests for each implemented functionality in the application and ensures that the code is working perfectly fine.
 
 Each file and directory is part of the project's setup, configuration, or the application itself, ensuring smooth deployment and development cycles.
 
